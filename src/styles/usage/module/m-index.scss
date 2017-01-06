@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@import "./common";
+@import "../libs/swiper.scss";
+.m-index {
+  @include flexbox();
+  @include flex-direction(column);
+  height: 100%;
+  header {
+    height: .44rem;
+    background: green;
+    ul {
+      @include flexbox();
+      height: 100%;
+      li:first-child,
+      li:last-child {
+        width: .44rem;
+        height: 100%;
+        line-height: .44rem;
+        text-align: center;
+        font-size: .24rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+      li:nth-child(2) {
+        @include flex();
+        @include flexbox();
+        @include justify-content();
+        @include align-items();
+        span {
+          display: inline-block;
+          width: .59rem;
+          height: .25rem;
+          text-align: center;
+          line-height: .25rem;
+          color: rgba(255, 255, 255, 0.6);
+          background: rgba(100, 217, 133, 0.6);
+          &:first-child {
+            border-radius: .1rem 0 0 .1rem;
+          }
+          &:last-child {
+            border-radius: 0 .1rem .1rem 0;
+          }
+          &.active {
+            background: #64d985;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  nav {
+     height: .35rem;
+     background: #fff;
+     @include border(0 0 1px 0,#d9d9d9);
+     ul {
+       @include flexbox();
+       li {
+         @include flex();
+         text-align: center;
+         height: .35rem;
+         line-height: .35rem;
+         @include box-sizing(borderbox);
+         &.active {
+           border-bottom: 2px solid green;
+           color: green;
+         }
+       }
+     }
+  }
+  section {
+    @include flex();
+    overflow-y: scroll;
+    width: 100%;
+    ul {
+      @include flexbox();
+      @include flex-wrap(wrap);//自动转行
+      padding-right: .05rem;
+      li {
+        width: 50%;
+        padding-left: .05rem;
+        padding-top: .05rem;
+        i,b {
+          display: block;
+        }
+        i {
+          width: 100%;
+        }
+        b {
+          @include ellipsis(null,2);//实现多行的文本隐藏
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  footer {
+    height: .44rem;
+    background: #fff;
+    ul {
+      @include flexbox();
+      @include border(1px 0 0 0,#CED6D0);
+      li {
+        @include flex();
+        &.active i,&.active b{
+          color: green;
+        }
+        b,i {
+          display: block;
+          text-align: center;
+          color: #d6d6d6;
+        }
+        b {
+          font-size: .12rem;
+          line-height: .14rem;
+        }
+        i {
+          font-size: .28rem;
+          height: .3rem;
+          line-height: .3rem;
+        }
+        &:nth-child(3) {
+
+          i {
+            @include border(1px,#ced6d0,solid,50%);
+            @include transform(translateX(-50%));
+            left:50%;
+            position:  relative;
+            width: .6rem;
+            height: .6rem;
+            top: -0.16rem;
+            background-color: #fff;
+            z-index: 9999;
+            line-height: .45rem;
+            font-size: .45rem;
+
+          }
+        }
+      }
+    }
+  }
+  > * {
+    width: 100%;
+  }
+}

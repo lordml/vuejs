@@ -1,0 +1,59 @@
+<div class="m-index" id="m-index">
+	<header>
+		<ul>
+			<li class="iconfont">&#xe602;</li>
+			<li>
+				<span class="active">热点</span>
+        <span>关注</span>
+			</li>
+			<li class="iconfont">&#xe619;</li>
+		</ul>
+	</header>
+	<nav>
+		<ul>
+			<li  v-on:click="changeTab(index)" :class="{active: index==navIndex}" v-for="(item,index) in nav">{{item}}</li>
+
+		</ul>
+	</nav>
+	<section>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li v-for="item in list">
+							<i><img :src="item.imgSrc" alt=""></i>
+							<b v-text="item.title"></b>
+						</li>
+					</ul>
+
+				</div>
+				<div class="swiper-slide">swiper-slide2</div>
+				<div class="swiper-slide">swiper-slide3</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<ul>
+			<li class="active">
+				<i class="iconfont">&#xe64c;</i>
+				<b>首页</b>
+			</li>
+			<li>
+				<i class="iconfont">&#xe600;</i>
+				<b>发现</b>
+			</li>
+			<li>
+				<i class="iconfont">&#xe604;</i>
+				<b></b>
+			</li>
+			<li>
+				<i class="iconfont">&#xe602;</i>
+				<b>我的</b>
+			</li>
+			<li>
+				<i class="iconfont">&#xe618;</i>
+				<b>退出</b>
+			</li>
+		</ul>
+	</footer>
+</div>
